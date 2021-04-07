@@ -1,9 +1,9 @@
 import { useState, ChangeEvent } from 'react';
 const inc = (count: number) => {
-  return count++;
+  return count + 1;
 };
 const dec = (count: number) => {
-  return count--;
+  return count - 1;
 };
 const Counter = () => {
   const [count, setCount] = useState(0);
@@ -14,7 +14,7 @@ const Counter = () => {
   return (
     <main className="Counter">
       <h1>Days Since Last Incident</h1>
-      <p className="count">0</p>
+      <p className="count">{count}</p>
       <section className="controls">
         <button onClick={() => setCount(inc)}>Increment</button>
         <button onClick={() => setCount(0)}>Reset</button>
@@ -29,7 +29,6 @@ const Counter = () => {
             value={count}
             onChange={changeCount}
           />
-          <input type="submit" onChange={(e) => setCount(+e.target.value)} />
         </form>
       </section>
     </main>
